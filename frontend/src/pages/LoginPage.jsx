@@ -1,8 +1,10 @@
 import { Button, FormLabel, TextField } from '@mui/material';
 import { Box, Container } from "@mui/system";
+import { useNavigate } from 'react-router-dom';
 
 
 export function GetLoginPage() {
+    let navigate = useNavigate();
     return (
         <Container>
             <Box 
@@ -37,7 +39,10 @@ export function GetLoginPage() {
                 <FormLabel sx={{mx:2, mt: 2}}>
                     Not a member yet?
                 </FormLabel>
-                <Button>
+                <Button 
+                    onClick={() => {
+                        navigate('/signUp');
+                    }}>
                     Sign up
                 </Button>
             </Box>
