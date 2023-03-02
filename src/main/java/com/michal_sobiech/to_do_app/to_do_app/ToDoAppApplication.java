@@ -2,12 +2,15 @@ package com.michal_sobiech.to_do_app.to_do_app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @SpringBootApplication
 @RestController
+@CrossOrigin
 public class ToDoAppApplication {
 
 	public static void main(String[] args) {
@@ -15,8 +18,8 @@ public class ToDoAppApplication {
 	}
 
 	@GetMapping("/")
-	public static String hello() {
-		return "sample text!";
+	public static List<String> sampleText() {
+		return List.of("Sample", "text", "!!!");
 	}
-
+	
 }
