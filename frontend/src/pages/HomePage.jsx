@@ -1,3 +1,5 @@
+import { Box } from "@mui/system";
+
 export function GetHomePage() {
-    return
+    return <Box>aaaa</Box>
 };

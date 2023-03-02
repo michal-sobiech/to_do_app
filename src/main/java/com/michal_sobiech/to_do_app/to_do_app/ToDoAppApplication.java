@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -20,6 +21,11 @@ public class ToDoAppApplication {
 	@GetMapping("/")
 	public static List<String> sampleText() {
 		return List.of("Sample", "text", "!!!");
-	}
+	};
+
+    @PostMapping("/signUp")
+	public static void registerUserInDataBase() {
+		return;
+	};
 	
 }

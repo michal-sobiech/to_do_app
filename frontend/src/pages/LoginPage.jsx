@@ -35,7 +35,12 @@ export function GetLoginPage() {
                         }
                     }
                 />
-                <Button>Log in</Button>
+                <Button 
+                    onClick={() => {
+                        navigate('/home');
+                    }}>
+                    Log in
+                </Button>
                 <FormLabel sx={{mx:2, mt: 2}}>
                     Not a member yet?
                 </FormLabel>

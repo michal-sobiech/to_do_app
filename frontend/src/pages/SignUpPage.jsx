@@ -55,7 +55,15 @@ export function GetSignUpPage() {
                         }
                     }
                 />
-                <Button>
+                <Button onClick={() => {
+                        sendSignUpPOST(
+                            'test',
+                            'test',
+                            'test',
+                            'test'
+                        );
+                        navigate('/');
+                    }}>
                     Sign up
                 </Button>
                 <FormLabel sx={{mx:2, mt: 2}}>
@@ -71,4 +79,12 @@ export function GetSignUpPage() {
         </Container>
     );
 
+};
+
+async function sendSignUpPOST(name, surname, email, password) {
+    fetch('http://localhost:8080/signUp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: [name, surname, email, password]
+    });
 };
