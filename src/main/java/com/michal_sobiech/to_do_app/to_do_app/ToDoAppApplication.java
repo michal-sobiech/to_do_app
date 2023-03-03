@@ -1,8 +1,12 @@
 package com.michal_sobiech.to_do_app.to_do_app;
 
 import com.michal_sobiech.to_do_app.to_do_app.database.database_classes.User;
+
+import lombok.extern.java.Log;
+
 import com.michal_sobiech.to_do_app.to_do_app.database.UserRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,6 +21,9 @@ import java.util.List;
 @CrossOrigin
 public class ToDoAppApplication {
 
+    @Autowired
+    private UserRepository userRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ToDoAppApplication.class, args);
 	}
@@ -27,8 +34,16 @@ public class ToDoAppApplication {
 	};
 
     @PostMapping("/signUp")
-	public static void registerUserInDataBase() {
-		return;
+	public void registerUserInDataBase() {  //TODO static?
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+        userRepository.save(
+            new User(
+                "test",
+                "test",
+                "test",
+                "test"
+            )
+        );
 	};
 	
 }
