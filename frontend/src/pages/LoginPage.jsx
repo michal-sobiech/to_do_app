@@ -1,10 +1,27 @@
 import { Button, FormLabel, TextField } from '@mui/material';
 import { Box, Container } from "@mui/system";
 import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie'
 
 
 export function GetLoginPage() {
+
     let navigate = useNavigate();
+    const [cookies, setCookies] = useCookies(['jwt_token']);
+
+    async function SendLoginDataPOST(email, password) {
+        fetch('http://localhost:8080/logIn', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'email': email,
+                'password': password
+            })
+        });
+    }
+
     return (
         <Container>
             <Box 
@@ -37,7 +54,9 @@ export function GetLoginPage() {
                 />
                 <Button 
                     onClick={() => {
-                        navigate('/home');
+                        // let promise = new Promise(())
+                        SendLoginDataPOST('test_email', 'test_password');
+                        // navigate('/home');
                     }}>
                     Log in
                 </Button>

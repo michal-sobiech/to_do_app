@@ -84,7 +84,14 @@ export function GetSignUpPage() {
 async function sendSignUpPOST(name, surname, email, password) {
     fetch('http://localhost:8080/signUp', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: [name, surname, email, password]
+        headers: { 
+            'Content-Type': 'application/json' 
+        },
+        body: {
+            'name': name,
+            'surname': surname,
+            'email': email,
+            'password': password
+        }
     });
 };

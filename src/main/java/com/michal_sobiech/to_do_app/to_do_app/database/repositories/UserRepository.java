@@ -1,4 +1,4 @@
-package com.michal_sobiech.to_do_app.to_do_app.database;
+package com.michal_sobiech.to_do_app.to_do_app.database.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

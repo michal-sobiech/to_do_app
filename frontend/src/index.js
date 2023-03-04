@@ -5,6 +5,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { GetHomePage } from './pages/HomePage';
+import { GetIndexPage } from './pages/IndexPage';
 import { GetLoginPage } from './pages/LoginPage';
 import { GetSignUpPage } from './pages/SignUpPage';
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter(
         children: [
             {
                 path: '/',
+                element: <GetIndexPage />
+            },
+            {
+                path: '/login',
                 element: <GetLoginPage />
             },
             {
