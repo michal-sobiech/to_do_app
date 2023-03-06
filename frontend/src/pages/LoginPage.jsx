@@ -15,11 +15,17 @@ export function GetLoginPage() {
             headers: { 
                 'Content-Type': 'application/json'
             },
+            // body: JSON.stringify({
+            //     'username': email,
+            //     'password': password
+            // })
             body: JSON.stringify({
-                'email': email,
-                'password': password
+                'username': 'ms',
+                'password': 'password'
             })
-        });
+        })
+        .then(res => res.text())
+        .then(res => console.log(res23))
     }
 
     return (
